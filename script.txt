@@ -1,0 +1,22 @@
+#-- coding: utf-8 --
+import requests 
+import telebot
+from telebot import types
+import pymysql #biblioteca de conexao com o MySQL
+
+conn = pymysql.connect(host='127.0.0.1', 
+unix_socket='/opt/lampp/var/mysql/mysql.sock', #qual base ele deve se conectar
+user='root', #usuario
+passwd=None, #vazio
+db='usuarios_telegram') #nome do banco de dados
+
+# 127.0.0.1 é igual localhost
+
+cur = conn.cursor() #conexao com o xampp
+# nome da base
+cur.execute("USE usuarios_telegram") #executando base a ser usada
+
+cur.execute("SELECT * FROM usuario where id_usuario = 1") 
+print(cur.fetchone()) #serve para mostrar valores no terminal
+cur.close()
+conn.close()
