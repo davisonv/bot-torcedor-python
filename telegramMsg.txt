@@ -4,7 +4,7 @@ script
 ---------------
 #!/bin/bash
  
-TOKEN="882587231:AAE5Cxj4gUepjJGT1voD6u12mSyS1tW0T1Q"
+TOKEN=""
  
 USER=$1
 SUBJECT=$2
